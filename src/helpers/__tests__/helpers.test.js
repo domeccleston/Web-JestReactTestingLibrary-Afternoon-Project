@@ -28,6 +28,20 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
+  it('can multiply two integers', () => {
+    expect(helpers.multiply(2, 3)).toBe(6);
+    expect(helpers.multiply(150, 70)).toBe(10500);
+  })
+  it('returns null when given non-numerical input', () => {
+    expect(() => helpers.multiply("1", "2").toThrow())
+  })
+  it('can multiply an arbitrary number of numbers', () => {
+    expect(helpers.multiply(2, 3, 4)).toBe(24)
+    expect(helpers.multiply(2, 3, 4, 5, 6)).toBe(720)
+  })
+  it('can multiply two floats', () => {
+    expect(helpers.multiply(4.56, 7.12)).toBe(32.4672)
+  })
 });
 
 describe('personMaker', () => {
